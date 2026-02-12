@@ -91,6 +91,12 @@ header p {
     font-weight: 600;
 }
 
+.role-indicator {
+    font-size: 0.9rem;
+    color: #a6adc8;
+    margin-bottom: 0.5rem;
+}
+
 .winner-announcement {
     color: #a6e3a1; /* Green */
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
