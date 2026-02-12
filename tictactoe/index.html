@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe (Go + HTMX)</title>
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <!-- HTMX SSE Extension -->
+    <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Tic-Tac-Toe</h1>
+            <p>Go + HTMX + SSE</p>
+        </header>
+
+        <!-- 
+            The Main Game Area.
+            hx-ext="sse": Enables SSE extension
+            sse-connect="/events": Connects to the SSE endpoint
+            sse-swap="message": When an SSE event named "message" is received, swap the content of this div with the data payload.
+        -->
+        <div id="game-wrapper" hx-ext="sse" sse-connect="/events" sse-swap="message">
+            <div class="loading">Loading Game Board...</div>
+        </div>
+
+        <div class="instructions">
+            <p>Open this page on another tab or device to play!</p>
+        </div>
+    </div>
+
+</body>
+</html>
